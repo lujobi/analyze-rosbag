@@ -1,0 +1,11 @@
+<package>
+  <name>analyze_rosbag</name>
+  <version>0.1.0</version>
+  <description>
+  This package is a test for RH3.
+  </description>
+  <maintainer email="l.j.bieri@gmail.com">Luzian Bieri</maintainer>
+  <license>None</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
