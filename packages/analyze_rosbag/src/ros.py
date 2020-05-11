@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
-import yaml
 import rosbag
 import json
 import re
 
 import os
-import rospy
 from duckietown import DTROS
 from rospy_message_converter import  message_converter
 
