@@ -54,11 +54,10 @@ class Ros_Analyze(DTROS):
 
     def run(self):
 
-        with rosbag.Bag('/data/'+os.environ['BAGNAME'], 'r') as bag:
+        with rosbag.Bag('/data/'+os.environ['BAGNAME']+'.bag', 'r') as bag:
             segs = self.retrieve_segment_count(bag)
             lat = self.retrieve_latencies(bag)
             
-
         with open('/data/{}_latencies.json'.format(os.environ['BAGNAME']), 'w') as file:
             print(lat)
             file.write(json.dumps(lat))
@@ -67,11 +66,10 @@ class Ros_Analyze(DTROS):
             print(segs)
             file.write(json.dumps(segs))
 
-
 if __name__ == '__main__':
     node = Ros_Analyze(node_name='ros_Analyze')
     node.run()
 
 
 # run command
-# dts devel build -f --arch amd64; and docker run -v /home/lujobi/data/:/data -e DUCKIEBOT=autobot14 -e BAGNAME=mater19_first_bm_test2.bag -it --rm duckietown/analyze-rosbag:v1-amd64
+# dts devel build -f --arch amd64
